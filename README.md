@@ -1,2 +1,2 @@
-# relic
-Relic Hunter 2021
+# IQbased__2019
+Understand and design it for Brainiac
