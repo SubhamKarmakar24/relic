@@ -14,6 +14,7 @@ session_start();
                 event.preventDefault();
                 
                 $.ajax({
+                    
                     url: "login.php",
                     method: "post",
                     data: $('#loginform').serialize(),
@@ -32,12 +33,11 @@ session_start();
                               title: 'Oops...',
                               text: strMessage
                             })
-                            
+                        } 
                         }
-                    }
+                    
                 })
             })
-        }
         
         
         
@@ -70,11 +70,14 @@ session_start();
                         }
                     }
                 }
+                })
+                closeForm1();
+                reload();
+        })
         
         
         
-        
-        
+        }
         
         
         
@@ -258,12 +261,13 @@ session_start();
                 </h1>
 
                 <a onclick="openForm1()" class="center-button">REGISTER</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a onclick="openForm2()" class="center-button">SIGN IN</a>
                 <br/>
                 <br/>
                 <br/>
                 <p class="message">
                 <?php
-                //<a onclick="openForm2()" class="center-button">SIGN IN</a>
                 if(isset($_SESSION['messageREG'])) {
                     echo $_SESSION['messageREG'];
                     }
@@ -273,7 +277,7 @@ session_start();
             </div>
             
             <div class="form-popup" id="myloginForm">
-                    <form method="post" id="loginform" autocomplete="off" class="form-container">
+                    <form action='login.php' method="post" id="loginform" autocomplete="off" class="form-container">
                      
 
                       <label for="email"><b>Email</b></label>
