@@ -2,15 +2,9 @@
 session_start();
 ?>
 <?php
+require 'connect.inc.php';
 $_SESSION['messageREG'] = "Relic Hunter Coming Soon";
-$conn = new mysqli('localhost','root','','kshitij');
-if($conn->connect_error)
-{
-    echo "$conn->connect_error";
-    die("Connection Failed : ". $conn->connect_error);
-}
-else
-{
+
 	if(isset($_POST['username']) && isset($_POST['password']))
 	{
 		$username = $_POST['username'];
@@ -137,7 +131,6 @@ else
 	
 	header('Location: index.php');
 //echo $current_file;
-}
 
 ?>
 

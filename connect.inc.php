@@ -1,16 +1,12 @@
 <?php
 
-$db_user = 'root';
-$db_pass = '';
+	$conn = new mysqli('localhost','root','','kshitij');
+	if($conn->connect_error)
+	{
+		echo "$conn->connect_error";
+		die("Connection Failed : ". $conn->connect_error);
+	}
 
-try {
-	$dbh = new PDO('mysql:host=localhost;dbname=kshitij', $db_user , $db_pass);
-
-} catch (PDOException $e) {
-	print "Error".$e->getMessage();
-	print 'Cannot connect to database.Try again Later';
-	die();
-} 
 
 
 
