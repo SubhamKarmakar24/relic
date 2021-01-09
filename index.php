@@ -1,6 +1,8 @@
 <?php
-// Start the session
-session_start();
+    
+    session_start();
+    require 'connect.inc.php';
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -262,19 +264,32 @@ session_start();
                     <span class="heading-primary--sub">KSHITIJ 2021</span>
                 </h1>
 
+ 
+                <p class="message">
+                <?php
+                if(isset($_SESSION['log'])) {
+                    echo $_SESSION['log'];
+                    ?>
+                    <a class="center-button " href="qpage.php">PLAY</a>
+                    <?php
+                    }
+                    else
+                    {
+                     ?>   
                 <a onclick="openForm1()" class="center-button">REGISTER</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               
+
                 <a onclick="openForm2()" class="center-button">SIGN IN</a>
                 <br/>
                 <br/>
                 <br/>
-                <p class="message">
-                <?php
-                if(isset($_SESSION['messageREG'])) {
-                    echo $_SESSION['messageREG'];
+                     
+                    <?php
                     }
                 ?>
-                </p>
+                </p> 
+
 
             </div>
             

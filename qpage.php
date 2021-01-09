@@ -1,31 +1,31 @@
 <?php
-session_start();
-require 'require.php';
-if (!loggedin()) {
-  header('Location: index.php');
-  die();
-}
-else{
-  require 'connect.inc.php';
-  $q_on=  $_SESSION['q_on'];
-  if($q_on >= 19){
-    $q_on="";
-    $ques ="Hurray!! You completed the game";
-    $hint= "Follow Leader Board to check if you win.";
-    $img_p="winner.png";
-  }
-  else{
-  $query = "SELECT ques, hint, img_p FROM relic_ques WHERE ques_no = ?";
-  $stmt = $dbh->prepare($query);
-  $stmt->bindParam(1, $q_on);
-  if ($stmt->execute()) {  
-    while ($row = $stmt->fetch()) {
-      $ques = $row[0];
-      $hint= $row[1];
-      $img_p= $row[2];
-    }
-  }
-}
+// session_start();
+// require 'require.php';
+// if (!loggedin()) {
+//   header('Location: index.php');
+//   die();
+// }
+// else{
+//   require 'connect.inc.php';
+//   $q_on=  $_SESSION['q_on'];
+//   if($q_on >= 19){
+//     $q_on="";
+//     $ques ="Hurray!! You completed the game";
+//     $hint= "Follow Leader Board to check if you win.";
+//     $img_p="winner.png";
+//   }
+//   else{
+//   $query = "SELECT ques, hint, img_p FROM relic_ques WHERE ques_no = ?";
+//   $stmt = $dbh->prepare($query);
+//   $stmt->bindParam(1, $q_on);
+//   if ($stmt->execute()) {  
+//     while ($row = $stmt->fetch()) {
+//       $ques = $row[0];
+//       $hint= $row[1];
+//       $img_p= $row[2];
+//     }
+//   }
+// }
 ?>
 
 <!DOCTYPE html>
@@ -505,5 +505,5 @@ button#trigger-overlay {
 <?php
 
 
-}
+
 ?>

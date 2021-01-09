@@ -1,6 +1,6 @@
 <?php
 
-require 'require.php';
+session_start();
 require 'connect.inc.php';
 
 if (isset($_POST['username']) && isset($_POST['password']))
@@ -91,6 +91,7 @@ if (isset($_POST['username']) && isset($_POST['password']))
 							$_SESSION['rank'] = $zero;
 							echo "allwell";
 							$_SESSION['messageREG'] = "Logged IN";
+							$_SESSION['log'] = "Logged IN";   //ctr=-1 (Logged in)
 						}
 						else
 						{
