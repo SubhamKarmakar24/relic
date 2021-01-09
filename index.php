@@ -37,6 +37,8 @@ session_start();
                         }
                     
                 })
+                closeForm1();
+                reload();
             })
         
         
