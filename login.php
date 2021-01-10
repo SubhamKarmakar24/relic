@@ -74,7 +74,7 @@ if (isset($_POST['username']) && isset($_POST['password']))
 					{
 						$null = 'NULL';
 						$login_time= time();
-						$login_score= 1548527399-$login_time;
+						$login_score= 1610999063-$login_time;
 						$zero='0';
 						$one= '1';
 
@@ -90,7 +90,7 @@ if (isset($_POST['username']) && isset($_POST['password']))
 							$_SESSION['score'] = $login_score;
 							$_SESSION['rank'] = $zero;
 							echo "allwell";
-							$_SESSION['messageREG'] = "Logged IN";
+							$_SESSION['messageREG'] = "Logged In";
 						}
 						else
 						{
@@ -102,12 +102,14 @@ if (isset($_POST['username']) && isset($_POST['password']))
 				else
 				{
 					echo 'Incorrect password';
+					$_SESSION['messageREG'] = "Incorrect Password";
 				}
 			}
 		}
 		else
 		{
 			echo 'Email address not found, please register on ktj.in first';
+			$_SESSION['messageREG'] = "Email address not found, please register on relic.ktj.in first";
 		}
 	}
 	else

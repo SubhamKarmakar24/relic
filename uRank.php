@@ -7,7 +7,7 @@ if (!loggedin()) {
 
 }else{
 	require 'connect.inc.php';
-  $query2 = "SELECT name, ktj_id, q_on, last_time, email FROM relic ORDER BY score ASC";
+  $query2 = "SELECT name, ktj_id, q_on, last_time, email FROM relic ORDER BY score DESC";
   $result = $conn->query($query2);
   $result1 = $conn->query($query2);
               

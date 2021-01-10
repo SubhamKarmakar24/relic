@@ -47,7 +47,7 @@
               $q_on = $_SESSION['q_on'];
               $last_time = time();
               $_SESSION['last_time'] =  $last_time;
-              $_SESSION['score']= $_SESSION['score'] + 20000000 + (1548527399-$last_time);
+              $_SESSION['score']= $_SESSION['score'] + 20000000 + (1610999063-$last_time);
               $score= $_SESSION['score'];
               $email = $_SESSION['email']; 
               $ktjid = $_SESSION['ktj_id'];

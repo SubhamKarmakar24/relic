@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2021 at 01:23 AM
+-- Generation Time: Jan 10, 2021 at 07:39 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -1396,12 +1396,13 @@ CREATE TABLE `relic` (
 --
 
 INSERT INTO `relic` (`id`, `name`, `email`, `ktj_id`, `q_on`, `last_time`, `score`, `rank`) VALUES
-(1, 'sd', 'a@a.a', 'a@a.a', 3, 1610237804, -145101320, 1),
-(2, 'as', 'c@c.c', 'c@c.c', 3, 1610229688, -145091148, NULL),
-(3, 'asfasf', 'd@d.d', 'd@d.d', 1, 1610223659, -61696260, NULL),
-(4, 'kasfh', 'e@e.e', 'e@e.e', 1, 1610223679, -61696280, 4),
-(5, 'lkasjf', 'f@f.f', 'f@f.f', 1, 1610223698, -61696299, NULL),
-(6, 'hhou', 'g@g.g', 'g@g.g', 1, 1610223717, -61696318, NULL);
+(1, 'ad', 'z@z.z', 'z@z.z', 1, 1610259269, 739794, NULL),
+(2, 'yszf', 'y@y.y', 'y@y.y', 1, 1610259315, 739748, NULL),
+(3, 'asf', 'x@x.x', 'x@x.x', 1, 1610259354, 739709, NULL),
+(4, 'klj', 'w@w.w', 'w@w.w', 1, 1610259391, 739672, NULL),
+(5, 'iuye', 'v@v.v', 'v@v.v', 1, 1610259451, 739612, NULL),
+(6, 'sd', 'a@a.a', 'a@a.a', 1, 1610259563, 739500, NULL),
+(7, 'A', 't@t.t', 't@t.t', 2, 1610260557, 21477050, NULL);
 
 -- --------------------------------------------------------
 
@@ -1588,7 +1589,13 @@ INSERT INTO `user` (`id`, `name`, `email`, `password`, `ktjid`) VALUES
 (11, 'asfasf', 'd@d.d', '$2y$10$FnA7ZsR8K7zCWFhX6zb4beOvIAqgVvngH49bIr7VzZcQ85cNNHmRm', 'asfajsfn'),
 (12, 'kasfh', 'e@e.e', '$2y$10$LvlWcHM8IVdlpUojpszzq.p9uWChKrZDZjWhrzPAA2bDgSXBwtqrK', 'asjhkf'),
 (13, 'lkasjf', 'f@f.f', '$2y$10$JwFqF7io/BeZxsxQ3PkOq.ODHKkWdGdEINEhO6/WuGJlBwNrE9ehK', 'afshhoho98'),
-(14, 'hhou', 'g@g.g', '$2y$10$EyXQMToye3BWoa6yejQx6OI7kauBsjvUIsy8lwnnJshfVt7wOSgOS', 'houh');
+(14, 'hhou', 'g@g.g', '$2y$10$EyXQMToye3BWoa6yejQx6OI7kauBsjvUIsy8lwnnJshfVt7wOSgOS', 'houh'),
+(15, 'ad', 'z@z.z', '$2y$10$6Tt4/d6vVDhqmKP7cc/EYufO/N2jrrwi0CbkisPRTNL3PFNWUmOuC', 'sgd'),
+(16, 'yszf', 'y@y.y', '$2y$10$HVm//N93Vk38dmFqkTrZhOWQtFiDJBRDfKtu.mzWUgjo2Iyo6MOim', 'saf'),
+(17, 'asf', 'x@x.x', '$2y$10$vCGs.xVw8hY6mJyzibpQ6O0b.XXJuoDTaOn3EHxsLznfzRE2ktACK', 'asf'),
+(18, 'klj', 'w@w.w', '$2y$10$Y3cPjvL7WyQ4YH1joVzmveyejOuvIeTLvUTHY/LnqLxTzYr/btcFO', 'szdf'),
+(19, 'iuye', 'v@v.v', '$2y$10$ZQgBEMDl0fm4LZlydZXeCu5NdvDP3sE/Aec0nO0sg9ZYAAAPqHS6S', 'ajn'),
+(20, 'A', 't@t.t', '$2y$10$/vprHJaRSdEIV3PBYeET1.S3/wa56oaDDTsrkt/AE8zZZUHPuuzfy', 'asfc');
 
 -- --------------------------------------------------------
 
@@ -1823,7 +1830,7 @@ ALTER TABLE `password_reset`
 -- AUTO_INCREMENT for table `relic`
 --
 ALTER TABLE `relic`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `relic_ques`
@@ -1865,7 +1872,7 @@ ALTER TABLE `toppr`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `workshop`
