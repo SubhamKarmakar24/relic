@@ -1,31 +1,78 @@
 <?php
-session_start();
-require 'require.php';
-if (!loggedin()) {
-  header('Location: index.php');
-  die();
-}
-else{
-  require 'connect.inc.php';
-  $q_on=  $_SESSION['q_on'];
-  if($q_on >= 19){
-    $q_on="";
-    $ques ="Hurray!! You completed the game";
-    $hint= "Follow Leader Board to check if you win.";
-    $img_p="winner.png";
+  require 'require.php';
+  $_SESSION['image'] = "";
+  if(!loggedin())
+  {
+    header('Location: index.php');
+    die();
   }
-  else{
-  $query = "SELECT ques, hint, img_p FROM relic_ques WHERE ques_no = ?";
-  $stmt = $dbh->prepare($query);
-  $stmt->bindParam(1, $q_on);
-  if ($stmt->execute()) {  
-    while ($row = $stmt->fetch()) {
-      $ques = $row[0];
-      $hint= $row[1];
-      $img_p= $row[2];
+  else
+  {
+    require 'connect.inc.php';
+    $q_on=  $_SESSION['q_on'];
+    if($q_on >= 19)
+    {
+      $q_on="";
+      $ques ="Hurray!! You completed the game";
+      $hint= "Follow Leader Board to check if you win.";
+      $img_p="winner.png";
+      $_SESSION['image'] = "img/winner.png";
     }
-  }
-}
+    else
+    {
+      $query0 = "SELECT ques, hint, img_p, img_p1, img_p2, img_p3, img_p4 FROM relic_ques WHERE ques_no = '$q_on'";
+      $result = $conn->query($query0);
+      
+      if($result->num_rows > 0)
+      {
+        $row = mysqli_fetch_row($result);
+        $ques = $row[0];
+        $hint= $row[1];
+        $img_p= $row[2];
+        $img_p1= $row[2];
+        $img_p2= $row[2];
+        $img_p3= $row[2];
+        $img_p4= $row[2];
+
+        if($row[3] != NULL)
+        {
+          $img_p1= $row[3];  
+        }
+        if($row[4] != NULL)
+        {
+          $img_p2= $row[4];  
+        }
+        if($row[5] != NULL)
+        {
+          $img_p3= $row[5];  
+        }
+        if($row[6] != NULL)
+        {
+          $img_p4= $row[6];  
+        }
+        if($_SESSION['currentimage'] == 1)
+        {
+          $_SESSION['image'] = $img_p;
+        }
+        else if($_SESSION['currentimage'] == 2)
+        {
+          $_SESSION['image'] = $img_p1;
+        }
+        else if($_SESSION['currentimage'] == 3)
+        {
+          $_SESSION['image'] = $img_p2;
+        }
+        else if($_SESSION['currentimage'] == 4)
+        {
+          $_SESSION['image'] = $img_p3;
+        }
+        else if($_SESSION['currentimage'] == 5)
+        {
+          $_SESSION['image'] = $img_p4;
+        }
+        
+      }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -51,12 +98,12 @@ else{
       <script>
 
 
-    $(document).ready(function() {
-
-
+    $(document).ready(function() 
+    {
       $('#qSubmit').click(function(event){
         event.preventDefault();
         $.ajax({ 
+          {
           url: "aCheck.php",
           method: "POST",
           data: $('form').serialize(),
@@ -93,11 +140,13 @@ else{
             }
           }
         });
+      }
       });
 
 
       setInterval(function(){ 
         $.ajax({ 
+          
           url: "uRank.php",
           method: "GET",
           dataType: "JSON",
@@ -110,7 +159,8 @@ else{
               $('#time'+i).attr("datetime", response["time"+ i]);
               $('#myrank').html(response.myrank);
             }
-          }
+          
+        }
         });
       }, 10000);
 
@@ -259,7 +309,7 @@ button#trigger-overlay {
    
    text-transform: uppercase;
    text-decoration: none;
-   padding: 1.5rem 4rem;
+   padding: 4px 0px 4px 0px !important;
    display: inline-block;
    border-radius: 1rem;
    -webkit-transition: all .2s;
@@ -268,7 +318,7 @@ button#trigger-overlay {
    font-size: 1.6rem;
    border: none !important;
    cursor: pointer;
-   width: 200px;
+   width: 240px;
    background-color: #927de4 !important;
    color: black !important;
 
@@ -388,7 +438,7 @@ button#trigger-overlay {
                </div>
                <div class="hedder-logo">
                   <h1><a href="index.php">   
-                     <img src="images/rhlogo.png" style="width:5em;" class="img-fluid" alt="logo">2019</a>
+                     <img src="images/rhlogo.png" style="width:5em;" class="img-fluid" alt="logo">2021</a>
                   </h1>
                </div>
                <!-- /open/close -->
@@ -408,20 +458,36 @@ button#trigger-overlay {
          <!--headder-->
             <!-- <div class="container py-lg-5 py-md-5 py-sm-4 py-4"> -->
                <div class="mycontainer1">
-                  <div id="img_p" class="questionbox" style=" background-size: cover">
+               <?php
+               
+               $iimmgg = $_SESSION['image'];
+               ?>
+                  <div id="img_p" class="questionbox" style=" background-size: cover;background-image: url(<?php echo $iimmgg ?>);">
                      <center>
                      <h3 >Question <span id="question_no"> <?php echo $q_on; ?></span></h3>
                      <p id="question"><?php echo $ques; ?></p>
-                     <form  autocomplete="off" method="POST">
+                     <form action='aCheck.php' autocomplete="off" method="POST">
                      <input type="text" id="answer" name="answer" placeholder="Put your answer here..."  required><br><br>
                      <button type="submit" id="qSubmit" class=" center-button" >SUBMIT</button>    <!--     -->
                      </form>
+                     
+                     <form action='nextImage.php' autocomplete="off" method="POST">
+                     <button type="submit" id="qSubmit" class=" center-button" >NEXT IMAGE</button>
+                     </form>
+                     <br/>
+                     <h6 style="color:#ffffff;">
+                     <?php
+                      if(isset($_SESSION['messageANS'])) {
+                        echo $_SESSION['messageANS'];
+                      }
+                      ?>
+                      </h6>
                      </center>
                   </div>
 
                   <div class="scoreboard scrollbar" id="style-10">
                     <center>
-                        <h3>Top 10 Braniacs</h3>
+                        <h3>Top 10 Relics</h3>
                     </center>   
                     <table>
                           <tr style = "background:none;">
@@ -433,32 +499,51 @@ button#trigger-overlay {
                           </tr>      
                         <?php
                      
-                          $query2 = "SELECT name, ktj_id, q_on, last_time FROM relic ORDER BY score DESC";
-                          $stmt2 = $dbh->prepare($query2);
-
+                          $query2 = "SELECT name, ktj_id, q_on, last_time, email FROM relic ORDER BY score ASC";
+                          $result = $conn->query($query2);
+                          $result1 = $conn->query($query2);
+                        
                           $check= false;
-                          if($stmt2->execute()){
+                          if($result->num_rows > 0)
+                          {
                             $i=0;
-                            $alldata = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-                            $rank = array_search($_SESSION['ktj_id'], array_column($alldata, 'ktj_id'));
+                            // $rank = array_search($_SESSION['ktj_id'], array_column($result->toArray(), 'ktj_id'));
+                            $ktjid = $_SESSION['ktj_id'];
+                            $usn = $_SESSION['email'];
                             
+                            while($i < $result->num_rows)
+                            {
+                              $row1 = $result1->fetch_assoc();
+                              $email = $row1['email'];
+                              if($email == $usn)
+                              {
+                                $rank = $i + 1;
+                                break;
+                              }
+                              $i++;
+                            }
+
+                            $i=0;
                             while ($i < 10){
-                              $row = $alldata[$i];
+                              $row = $result->fetch_assoc();
                               $naam = $row['name'];
                               $qusetion_on = $row['q_on']-1;
                               $last_correct = $row['last_time'];
                               date_default_timezone_set("Asia/Kolkata");
                               $ti= date('Y-m-d H:i:s', $last_correct);
-                              echo '<tr style = "background:none;">';
-                              echo "<td id='rank".($i + 1)."'>".($i + 1)."</td>";
-                              echo "<td id='name".($i + 1)."'>".$naam."</td>";
-                              echo "<td id='q_on".($i + 1)."'>".$qusetion_on."</td>";
-                              echo "<td class='need_to_be_rendered' datetime='".$ti."'  id='time".($i + 1)."'>".$ti."</td>";
-                              echo "</tr>";
+                              if($qusetion_on>=0)
+                              {
+                                echo '<tr style = "background:none;">';
+                                echo "<td id='rank".($i + 1)."'>".($i + 1)."</td>";
+                                echo "<td id='name".($i + 1)."'>".$naam."</td>";
+                                echo "<td id='q_on".($i + 1)."'>".$qusetion_on."</td>";
+                                echo "<td class='need_to_be_rendered' datetime='".$ti."'  id='time".($i + 1)."'>".$ti."</td>";
+                                echo "</tr>";
+                              }
                               $i++;
                                
                             }
-                            $myrank= $rank + 1;
+                            $myrank= $rank;
                           }
                         ?>
                     </table>
@@ -483,8 +568,8 @@ button#trigger-overlay {
             </ul>
          </div>
             <div class="footer-below text-center">
-              <p>Explore more about KSHITIJ-2019 at <a href="http://www.ktj.in" target="_blank"> ktj.in</a><br>
-               <span>Date of Fest: <bold style="color:red;">18th-20th of January 2019</bold><span></p>
+              <p>Explore more about KSHITIJ-2021 at <a href="http://www.ktj.in" target="_blank"> ktj.in</a><br>
+               <span>Date of Fest: <bold style="color:red;">15th-17th of January 2021</bold><span></p>
             </div>
          </footer>
          <!-- //Footer -->

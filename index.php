@@ -1,6 +1,8 @@
 <?php
 // Start the session
-session_start();
+require 'require.php';
+$_SESSION['messageANS'] = "";
+$_SESSION['currentimage'] = 1;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -262,9 +264,25 @@ session_start();
                     <span class="heading-primary--sub">KSHITIJ 2021</span>
                 </h1>
 
+
+
+                <?php
+                    if(!loggedin())
+                    {
+                ?>
                 <a onclick="openForm1()" class="center-button">REGISTER</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a onclick="openForm2()" class="center-button">SIGN IN</a>
+                
+                <?php
+                    }
+                    else
+                    {
+                ?>
+                <a class="btn btn--white btn--animated" href="qpage.php">PLAY</a>
+                <?php
+                    }
+                ?>
                 <br/>
                 <br/>
                 <br/>
