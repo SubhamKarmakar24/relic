@@ -100,7 +100,7 @@ $_SESSION['currentimage'] = 1;
 
         <link rel="stylesheet" href="cssnew/style.css">
         <link rel="stylesheet" href="cssnew/overiden.css">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png"> -->
         <script type="text/javascript">
             function openForm2()
             {
@@ -349,7 +349,7 @@ $_SESSION['currentimage'] = 1;
                         Rules
                     </h2></center>
                     <ol style="font-size:20px; margin:0% 20%;color:white;">
-                        <li>There are 18 questions put up in this event.</li>
+                        <li>There are 20 questions put up in this event.</li>
                         <li>Hints and background image will be provided based on the question, utilize them wisely.</li>
                         <li>If answer contains two name, seperate then with 'and'.</li>
                         <li>Answer are case insensitive.</li>

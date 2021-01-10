@@ -78,11 +78,12 @@
 <!DOCTYPE html>
 <html lang="zxx">
    <head>
-       <title>BRANIAC</title>
+       <title>Relic Hunter</title>
       <!--meta tags -->
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="keywords" content="Relic Hunter, relichunter, relic, IIT kgp, kshitij, kshitij kgp" />
+      
       <script>
          addEventListener("load", function () {
          	setTimeout(hideURLbar, 0);
@@ -402,8 +403,8 @@ button#trigger-overlay {
                      <ul>
                         <li><a href="index.php#aboutopen">ABOUT</a></li>
                         <li><a href="index.php#rules" >RULES</a></li>
-                        <li><a href="index.php#teamopen">OUR TEAM</a></li>
-                        <li><a href="index.php#contactopen">CONTACT</a></li>
+                        <li><a href="https://ktj.in/#/contactus/web">OUR TEAM</a></li>
+                        <li><a href="https://ktj.in/#/contactus">CONTACT</a></li>
                         <li><a href="logout.php">LOGOUT</a></li>
                      </ul>
                   </nav>
@@ -452,7 +453,7 @@ button#trigger-overlay {
                       ?>
                      <p id="question"><?php echo $ques; ?></p>
 
-                    <?php
+                     <?php
                       if($_SESSION['q_on'] < 21)
                       {
                     ?>
@@ -465,11 +466,9 @@ button#trigger-overlay {
                      <form action='nextImage.php' autocomplete="off" method="POST">
                      <button type="submit" id="qSubmit" class=" center-button" >NEXT IMAGE</button>
                      </form>
-                     
-                    <?php
+                     <?php
                       }
                     ?>
-
                      <br/>
                      <h6 style="color:#ffffff;">
                      <?php

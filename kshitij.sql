@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2021 at 11:35 AM
+-- Generation Time: Jan 10, 2021 at 07:39 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -1401,10 +1401,8 @@ INSERT INTO `relic` (`id`, `name`, `email`, `ktj_id`, `q_on`, `last_time`, `scor
 (3, 'asf', 'x@x.x', 'x@x.x', 1, 1610259354, 739709, NULL),
 (4, 'klj', 'w@w.w', 'w@w.w', 1, 1610259391, 739672, NULL),
 (5, 'iuye', 'v@v.v', 'v@v.v', 1, 1610259451, 739612, NULL),
-(6, 'sd', 'a@a.a', 'a@a.a', 21, 1610274564, 415263517, NULL),
-(7, 'A', 't@t.t', 't@t.t', 2, 1610260557, 21477050, NULL),
-(8, 'hhou', 'g@g.g', 'g@g.g', 1, 1610263981, 735082, NULL),
-(9, 'zdgsdg', 'aa@a.a', 'aa@a.a', 2, 1610274751, 21448637, NULL);
+(6, 'sd', 'a@a.a', 'a@a.a', 1, 1610259563, 739500, NULL),
+(7, 'A', 't@t.t', 't@t.t', 2, 1610260557, 21477050, NULL);
 
 -- --------------------------------------------------------
 
@@ -1450,9 +1448,9 @@ INSERT INTO `relic_ques` (`id`, `ques_no`, `ques`, `ans1`, `ans2`, `hint`, `img_
 (17, 17, 'Image is saying something', 'Babbitty Rabbitty and her Cackling Stump', 'babbitty rabbitty and her sackling stump', '', 'img/17.png', '', '', '', ''),
 (18, 18, 'The anarchist emblem of Black rose inspired writers of both times medieval and present, it leads to which part of the story?', 'Deathly Hallows', 'deathly hallows', '', 'img/18.png', '', '', '', ''),
 (19, 19, 'His fanatic love made him a sinner, because of him the wisdom of centuries was lost and his repentance burdened him for eternity. Who is he?(Mention the famous name)', 'Bloody Barren', 'bloody barren', '', 'img/19.png', '', '', '', ''),
-(20, 20, 'Qustion is in image', 'answer', 'answer', '', 'img/20.png', '', '', '', ''),
-(21, 21, 'Question is in image', 'answer', 'answer', '', 'img/21.png', '', '', '', ''),
-(22, 22, 'A  person is sitting there with guilt because of the X harry have. But if you want to reach to him you will have to use this, may be you will reach to this place Y. X Y is', 'Love Martinsville', 'answer', '', 'img/22.png', '', '', '', '');
+(20, 20, 'Qustion is in image', '', '', '', 'img/20.png', '', '', '', ''),
+(21, 21, 'Question is in image', '', '', '', 'img/21.png', '', '', '', ''),
+(22, 22, 'A  person is sitting there with guilt because of the X harry have. But if you want to reach to him you will have to use this, may be you will reach to this place Y. X Y is', 'Love Martinsville', '', '', 'img/22.png', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1597,10 +1595,7 @@ INSERT INTO `user` (`id`, `name`, `email`, `password`, `ktjid`) VALUES
 (17, 'asf', 'x@x.x', '$2y$10$vCGs.xVw8hY6mJyzibpQ6O0b.XXJuoDTaOn3EHxsLznfzRE2ktACK', 'asf'),
 (18, 'klj', 'w@w.w', '$2y$10$Y3cPjvL7WyQ4YH1joVzmveyejOuvIeTLvUTHY/LnqLxTzYr/btcFO', 'szdf'),
 (19, 'iuye', 'v@v.v', '$2y$10$ZQgBEMDl0fm4LZlydZXeCu5NdvDP3sE/Aec0nO0sg9ZYAAAPqHS6S', 'ajn'),
-(20, 'A', 't@t.t', '$2y$10$/vprHJaRSdEIV3PBYeET1.S3/wa56oaDDTsrkt/AE8zZZUHPuuzfy', 'asfc'),
-(21, 'sdf', 'sdf@kjgsdf.sdf', '$2y$10$o3kQAyQwX4yPoKooOws.I.vWdcBbLQlhegYIQd8ShhH2TZsiG9oUm', 'sdfsdgv'),
-(22, 'kjh', 'kjb@hgfv', '$2y$10$fQLEVBDtIUJ386sR3GTm5.KDwb77SNP4cjFI.ykQcix5W1hGrEQ7K', 'kh'),
-(23, 'zdgsdg', 'aa@a.a', '$2y$10$KPHO5TifGOL11HvyVdyyN.sCv/IgEECRVI4HvSqPhFZHmMrHUccXW', 'asfgsd');
+(20, 'A', 't@t.t', '$2y$10$/vprHJaRSdEIV3PBYeET1.S3/wa56oaDDTsrkt/AE8zZZUHPuuzfy', 'asfc');
 
 -- --------------------------------------------------------
 
@@ -1835,7 +1830,7 @@ ALTER TABLE `password_reset`
 -- AUTO_INCREMENT for table `relic`
 --
 ALTER TABLE `relic`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `relic_ques`
@@ -1877,7 +1872,7 @@ ALTER TABLE `toppr`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `workshop`
