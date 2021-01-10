@@ -42,7 +42,7 @@ if (isset($_POST['username']) && isset($_POST['password']))
 					}
 				
 				
-					$query2 = "SELECT q_on, last_time, score, rank FROM relic WHERE email = '$username' AND ktj_id = '$ktjid'";
+					$query2 = "SELECT q_on, last_time, score, rank FROM relic WHERE email = '$username'";
 					$result = $conn->query($query2);
 
 					$status= false;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2021 at 07:39 AM
+-- Generation Time: Jan 10, 2021 at 06:28 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -1384,10 +1384,10 @@ CREATE TABLE `relic` (
   `id` int(11) NOT NULL,
   `name` varchar(224) NOT NULL,
   `email` varchar(224) NOT NULL,
-  `ktj_id` varchar(20) NOT NULL,
+  `ktj_id` varchar(40) NOT NULL,
   `q_on` int(11) NOT NULL,
-  `last_time` bigint(20) NOT NULL,
-  `score` bigint(20) NOT NULL,
+  `last_time` bigint(40) NOT NULL,
+  `score` bigint(40) NOT NULL,
   `rank` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1400,9 +1400,13 @@ INSERT INTO `relic` (`id`, `name`, `email`, `ktj_id`, `q_on`, `last_time`, `scor
 (2, 'yszf', 'y@y.y', 'y@y.y', 1, 1610259315, 739748, NULL),
 (3, 'asf', 'x@x.x', 'x@x.x', 1, 1610259354, 739709, NULL),
 (4, 'klj', 'w@w.w', 'w@w.w', 1, 1610259391, 739672, NULL),
-(5, 'iuye', 'v@v.v', 'v@v.v', 1, 1610259451, 739612, NULL),
-(6, 'sd', 'a@a.a', 'a@a.a', 1, 1610259563, 739500, NULL),
-(7, 'A', 't@t.t', 't@t.t', 2, 1610260557, 21477050, NULL);
+(5, 'iuye', 'v@v.v', 'v@v.v', 3, 1610288094, 42161572, NULL),
+(6, 'sd', 'a@a.a', 'a@a.a', 21, 1610274564, 415263517, NULL),
+(7, 'A', 't@t.t', 't@t.t', 2, 1610260557, 21477050, NULL),
+(8, 'hhou', 'g@g.g', 'g@g.g', 3, 1610288010, 42157391, NULL),
+(9, 'zdgsdg', 'aa@a.a', 'aa@a.a', 2, 1610274751, 21448637, NULL),
+(10, 'as', 'c@c.c', 'c@c.c', 1, 1610277784, 721279, NULL),
+(11, 'aslfj kjansdjkn las', 'ab@a.a', 'ab@a.a', 21, 1610279137, 415122387, NULL);
 
 -- --------------------------------------------------------
 
@@ -1429,9 +1433,9 @@ CREATE TABLE `relic_ques` (
 --
 
 INSERT INTO `relic_ques` (`id`, `ques_no`, `ques`, `ans1`, `ans2`, `hint`, `img_p`, `img_p1`, `img_p2`, `img_p3`, `img_p4`) VALUES
-(1, 1, 'The one true owner of the cloak, no one can see him, is among the people who saw death, he started seeing those, Name them.', 'Thestrals', 'thestrals', 'We see them in Hogsmeade.', 'img/1.png', 'img/2.png', 'img/3.png', 'img/4.png', 'img/5.png'),
-(2, 2, 'One of the many  things which were similar between Harry and The Dark Lord, this was related to one of the magical creatures.Can you name (by which it is called) that creature?', 'fawkes', 'Fawkes', '', 'img/2.png', 'img/2.png', 'img/2.png', 'img/2.png', 'img/5.png'),
-(3, 3, 'About him/her you know very less, he/she had helped Harry through tough times just by a reflection, where was he/she first seen in movie series?', 'Hog\'s head', 'Head of Hog', 'An untouched part of Dumbledore\'s life.', 'img/3.png', 'img/2.png', 'img/1.png', 'img/5.png', 'img/4.png'),
+(1, 1, 'The one true owner of the cloak, no one can see him, is among the people who saw death, he started seeing those, Name them.', 'Thestrals', 'thestrals', 'We see them in Hogsmeade.', 'img/1.png', 'img/2.png', 'img/3.png', NULL, NULL),
+(2, 2, 'One of the many  things which were similar between Harry and The Dark Lord, this was related to one of the magical creatures.Can you name (by which it is called) that creature?', 'fawkes', 'Fawkes', '', 'img/2.png', 'img/2.png', 'img/2.png', 'img/2.png', NULL),
+(3, 3, 'About him/her you know very less, he/she had helped Harry through tough times just by a reflection, where was he/she first seen in movie series?', 'Hog\'s head', 'Head of Hog', 'An untouched part of Dumbledore\'s life.', 'img/3.png', 'img/2.png', 'img/1.png', 'img/5.png', NULL),
 (4, 4, 'One thing in common between the two scenarios.', 'Halloween', 'halloween', 'end with \'n\'', 'img/4.png', '', '', '', ''),
 (5, 5, 'In the real world, this dragon must have gone unnoticed by muggles, but Ben\'s neighbor saw it with its own eye. Who saw the dragon? ', 'London eye', 'london eye', '', 'img/5.png', '', '', '', ''),
 (6, 6, 'After getting eternal glory by defeating Horntail Harry wants to sell Horntail\'s liver to make an offering at Princess Diana\'s funeral. So much will he get for it? Just mention the number. ', '17', 'seventeen', '', 'img/6.png', '', '', '', ''),
@@ -1448,9 +1452,9 @@ INSERT INTO `relic_ques` (`id`, `ques_no`, `ques`, `ans1`, `ans2`, `hint`, `img_
 (17, 17, 'Image is saying something', 'Babbitty Rabbitty and her Cackling Stump', 'babbitty rabbitty and her sackling stump', '', 'img/17.png', '', '', '', ''),
 (18, 18, 'The anarchist emblem of Black rose inspired writers of both times medieval and present, it leads to which part of the story?', 'Deathly Hallows', 'deathly hallows', '', 'img/18.png', '', '', '', ''),
 (19, 19, 'His fanatic love made him a sinner, because of him the wisdom of centuries was lost and his repentance burdened him for eternity. Who is he?(Mention the famous name)', 'Bloody Barren', 'bloody barren', '', 'img/19.png', '', '', '', ''),
-(20, 20, 'Qustion is in image', '', '', '', 'img/20.png', '', '', '', ''),
-(21, 21, 'Question is in image', '', '', '', 'img/21.png', '', '', '', ''),
-(22, 22, 'A  person is sitting there with guilt because of the X harry have. But if you want to reach to him you will have to use this, may be you will reach to this place Y. X Y is', 'Love Martinsville', '', '', 'img/22.png', '', '', '', '');
+(20, 20, 'Qustion is in image', 'answer', 'answer', '', 'img/10.png', '', '', '', ''),
+(21, 21, 'Question is in image', 'answer', 'answer', '', 'img/21.png', '', '', '', ''),
+(22, 22, 'A  person is sitting there with guilt because of the X harry have. But if you want to reach to him you will have to use this, may be you will reach to this place Y. X Y is', 'Love Martinsville', 'answer', '', 'img/22.png', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1571,7 +1575,7 @@ CREATE TABLE `user` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `ktjid` varchar(10) NOT NULL
+  `ktjid` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
@@ -1595,7 +1599,11 @@ INSERT INTO `user` (`id`, `name`, `email`, `password`, `ktjid`) VALUES
 (17, 'asf', 'x@x.x', '$2y$10$vCGs.xVw8hY6mJyzibpQ6O0b.XXJuoDTaOn3EHxsLznfzRE2ktACK', 'asf'),
 (18, 'klj', 'w@w.w', '$2y$10$Y3cPjvL7WyQ4YH1joVzmveyejOuvIeTLvUTHY/LnqLxTzYr/btcFO', 'szdf'),
 (19, 'iuye', 'v@v.v', '$2y$10$ZQgBEMDl0fm4LZlydZXeCu5NdvDP3sE/Aec0nO0sg9ZYAAAPqHS6S', 'ajn'),
-(20, 'A', 't@t.t', '$2y$10$/vprHJaRSdEIV3PBYeET1.S3/wa56oaDDTsrkt/AE8zZZUHPuuzfy', 'asfc');
+(20, 'A', 't@t.t', '$2y$10$/vprHJaRSdEIV3PBYeET1.S3/wa56oaDDTsrkt/AE8zZZUHPuuzfy', 'asfc'),
+(21, 'sdf', 'sdf@kjgsdf.sdf', '$2y$10$o3kQAyQwX4yPoKooOws.I.vWdcBbLQlhegYIQd8ShhH2TZsiG9oUm', 'sdfsdgv'),
+(22, 'kjh', 'kjb@hgfv', '$2y$10$fQLEVBDtIUJ386sR3GTm5.KDwb77SNP4cjFI.ykQcix5W1hGrEQ7K', 'kh'),
+(23, 'zdgsdg', 'aa@a.a', '$2y$10$KPHO5TifGOL11HvyVdyyN.sCv/IgEECRVI4HvSqPhFZHmMrHUccXW', 'asfgsd'),
+(24, 'aslfj kjansdjkn las', 'ab@a.a', '$2y$10$FvKGzAqxoUpKQB8y7sAaQOcWcxoT2/CsGZSsBKgeROji5hyq51tUC', 'ajkshkhaus');
 
 -- --------------------------------------------------------
 
@@ -1830,7 +1838,7 @@ ALTER TABLE `password_reset`
 -- AUTO_INCREMENT for table `relic`
 --
 ALTER TABLE `relic`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `relic_ques`
@@ -1872,7 +1880,7 @@ ALTER TABLE `toppr`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `workshop`

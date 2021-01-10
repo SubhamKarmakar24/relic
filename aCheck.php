@@ -52,7 +52,7 @@
               $email = $_SESSION['email']; 
               $ktjid = $_SESSION['ktj_id'];
 
-              $query2 ="UPDATE relic SET q_on = '$q_on', last_time = '$last_time', score = '$score' WHERE email = '$email' AND ktj_id = '$ktjid'";
+              $query2 ="UPDATE relic SET q_on = '$q_on', last_time = '$last_time', score = '$score' WHERE email = '$email'";
               if($conn->query($query2) === TRUE)
               {
                 echo "Record updated successfully";
@@ -72,6 +72,7 @@
                 $data0["status"]= "correct";
                 echo json_encode($data0);
                 $_SESSION['messageANS'] = "";
+                $_SESSION['currentimage'] = 1;
                 header('Location: qpage.php');
               }
               else
@@ -90,6 +91,7 @@
                 $data1["ques_on"]= $q_on;
                 $data1["status"]= "correct";
                 $_SESSION['messageANS'] = "";
+                $_SESSION['currentimage'] = 1;
                 echo json_encode($data1);
                 header('Location: qpage.php');
               }
