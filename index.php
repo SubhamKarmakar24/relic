@@ -271,7 +271,8 @@ $_SESSION['currentimage'] = 1;
                     {
                 ?>
                 <a onclick="openForm1()" class="center-button">REGISTER</a>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br/>
+                <br/>
                 <a onclick="openForm2()" class="center-button">SIGN IN</a>
                 
                 <?php
