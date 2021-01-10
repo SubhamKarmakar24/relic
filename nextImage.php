@@ -1,6 +1,6 @@
 <?php
     require 'require.php';
-    if($_SESSION['currentimage']>4)
+    if($_SESSION['currentimage']>=$_SESSION['totalimage'])
     {
         $_SESSION['currentimage'] = 1;
     }
