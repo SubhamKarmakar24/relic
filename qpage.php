@@ -33,42 +33,66 @@
         $img_p2= $row[2];
         $img_p3= $row[2];
         $img_p4= $row[2];
-
+        $_SESSION['totalimage'] = 1;
         if($row[3] != NULL)
         {
           $img_p1= $row[3];  
+          $_SESSION['totalimage'] = 2;
         }
         if($row[4] != NULL)
         {
-          $img_p2= $row[4];  
+          $img_p2= $row[4]; 
+          $_SESSION['totalimage'] = 3;  
         }
         if($row[5] != NULL)
         {
           $img_p3= $row[5];  
+          $_SESSION['totalimage'] = 4;  
         }
         if($row[6] != NULL)
         {
-          $img_p4= $row[6];  
+          $img_p4= $row[6]; 
+          $_SESSION['totalimage'] = 5;  
         }
-        if($_SESSION['currentimage'] == 1)
+        if(($_SESSION['currentimage'] == 1) && ($row[2] != NULL))
         {
           $_SESSION['image'] = $img_p;
         }
-        else if($_SESSION['currentimage'] == 2)
+        else if(($_SESSION['currentimage'] == 2) && ($row[3] != NULL))
         {
           $_SESSION['image'] = $img_p1;
         }
-        else if($_SESSION['currentimage'] == 3)
+        else if(($_SESSION['currentimage'] == 2) && ($row[3] == NULL))
+        {
+          $_SESSION['image'] = $img_p;
+          $_SESSION['currentimage'] = 1;
+        }
+        else if(($_SESSION['currentimage'] == 3) && ($row[4] != NULL))
         {
           $_SESSION['image'] = $img_p2;
         }
-        else if($_SESSION['currentimage'] == 4)
+        else if(($_SESSION['currentimage'] == 3) && ($row[4] == NULL))
+        {
+          $_SESSION['image'] = $img_p1;
+          $_SESSION['currentimage'] = 2;
+        }
+        else if(($_SESSION['currentimage'] == 4) && ($row[5] != NULL))
         {
           $_SESSION['image'] = $img_p3;
         }
-        else if($_SESSION['currentimage'] == 5)
+        else if(($_SESSION['currentimage'] == 4) && ($row[5] == NULL))
+        {
+          $_SESSION['image'] = $img_p2;
+          $_SESSION['currentimage'] = 3;
+        }
+        else if(($_SESSION['currentimage'] == 5) && ($row[6] != NULL))
         {
           $_SESSION['image'] = $img_p4;
+        }
+        else if(($_SESSION['currentimage'] == 5) && ($row[6] == NULL))
+        {
+          $_SESSION['image'] = $img_p3;
+          $_SESSION['currentimage'] = 4;
         }
         
       }
@@ -343,6 +367,7 @@ button#trigger-overlay {
     color: #d79f47;
 }
       </style>
+       <link rel="shortcut icon" type="image/png" href="img/favicon.png"> 
    </head>
    <body>
 
@@ -442,6 +467,7 @@ button#trigger-overlay {
                       {
                     ?>
                      <h3 >Question <span id="question_no"> <?php echo $q_on; ?></span></h3>
+                     <span style="color: #fff;">Image <?php echo $_SESSION['currentimage'] ?>/<?php echo $_SESSION['totalimage'] ?></span>
                      <?php
                       }
                       else

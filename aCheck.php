@@ -72,6 +72,7 @@
                 $data0["status"]= "correct";
                 echo json_encode($data0);
                 $_SESSION['messageANS'] = "";
+                $_SESSION['currentimage'] = 1;
                 header('Location: qpage.php');
               }
               else
@@ -90,6 +91,7 @@
                 $data1["ques_on"]= $q_on;
                 $data1["status"]= "correct";
                 $_SESSION['messageANS'] = "";
+                $_SESSION['currentimage'] = 1;
                 echo json_encode($data1);
                 header('Location: qpage.php');
               }
