@@ -10,7 +10,7 @@
   {
     require 'connect.inc.php';
     $q_on=  $_SESSION['q_on'];
-    if($q_on >= 19)
+    if($q_on >= 21)
     {
       $q_on="";
       $ques ="Hurray!! You completed the game";
@@ -464,8 +464,27 @@ button#trigger-overlay {
                ?>
                   <div id="img_p" class="questionbox" style=" background-size: cover;background-image: url(<?php echo $iimmgg ?>);">
                      <center>
+                     <?php
+                      if($_SESSION['q_on'] < 21)
+                      {
+                    ?>
                      <h3 >Question <span id="question_no"> <?php echo $q_on; ?></span></h3>
+                     <?php
+                      }
+                      else
+                      {
+                    ?>
+                    <h3 >...</h3>
+                    <?php
+                      }
+                      ?>
                      <p id="question"><?php echo $ques; ?></p>
+
+                    <?php
+                      if($_SESSION['q_on'] < 21)
+                      {
+                    ?>
+
                      <form action='aCheck.php' autocomplete="off" method="POST">
                      <input type="text" id="answer" name="answer" placeholder="Put your answer here..."  required><br><br>
                      <button type="submit" id="qSubmit" class=" center-button" >SUBMIT</button>    <!--     -->
@@ -474,6 +493,11 @@ button#trigger-overlay {
                      <form action='nextImage.php' autocomplete="off" method="POST">
                      <button type="submit" id="qSubmit" class=" center-button" >NEXT IMAGE</button>
                      </form>
+                     
+                    <?php
+                      }
+                    ?>
+
                      <br/>
                      <h6 style="color:#ffffff;">
                      <?php

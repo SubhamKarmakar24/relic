@@ -68,7 +68,7 @@ if (isset($_POST['username']) && isset($_POST['password']))
 						$_SESSION['score'] = $score;
 						$_SESSION['rank'] = $rank;
 						echo "allwell";
-						$_SESSION['messageREG'] = "Logged IN";
+						$_SESSION['messageREG'] = "Logged In";
 					}
 					else
 					{

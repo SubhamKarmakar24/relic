@@ -10,7 +10,7 @@
   {
     if(isset($_POST['answer']))
     {
-      if($_SESSION['q_on'] > 18)
+      if($_SESSION['q_on'] > 20)
       {
         $data["status"]= "You already Completed the Game!";
         echo json_encode($data);
@@ -62,7 +62,7 @@
                 echo "Error updating record: " . $conn->error;
               }
               
-              if($q_on > 18)
+              if($q_on >= 21)
               {
                 $data0["question"] = "Hurray!! You completed the game";
                 $data0["hint"]= "Follow Leader Board to check if you win";
@@ -71,6 +71,8 @@
                 $data0["ques_on"]= "Over";
                 $data0["status"]= "correct";
                 echo json_encode($data0);
+                $_SESSION['messageANS'] = "";
+                header('Location: qpage.php');
               }
               else
               {
