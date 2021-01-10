@@ -211,52 +211,44 @@
             -moz-background-size: cover;
             -o-background-size: cover;
             -ms-background-size: cover;
-            min-height: 150px;
             color: #d79f47;
             background-color:#260026;
-            padding-top: 3.5em;
             border-bottom: 1px solid #d79f47;
-
+            padding: .7rem;
          }
          .mycontainer1 {
     width: 100%;
-    padding: 2em 1% 0 1%;
-    /* background-color: skyblue; */
-    height: 600px;
+    padding: 2em;
     margin-top: 0em;
-
+    display: flex;
+    flex-wrap: wrap;
     background-color: #380028  !important;
-}
-
-.overlay ul li a {
-
+  }
+  
+  .overlay ul li a {
+    
     color: #d79f47 !important;
-}
-.questionbox {
-    width: 69%;
-    height: 95%;
-    float: left;
-    /* box-shadow: 4px 4px 13px 2px #0000004d;
-    style="background-image:url(<?= $img_p ?>); */
+  }
+  .questionbox {
+    box-shadow: 4px 4px 13px 2px #0000004d;
+    /* style="background-image:url(<?= $img_p ?>); */
     background: #260026;
-         border: 2px solid #d79f47;
-
-}
-.scoreboard {
+    border: 2px solid #d79f47;
+    height: 600px;
+  }
+  .scoreboard {
     letter-spacing: 0px;
-    width: 29%;
-    float: right;
-    /* background-color: white; */
     background-color: #260026 !important;
-    height: 95%;
-    margin-bottom: 10px;
     /* padding: 10px; */
+    height: 600px;
     overflow: auto;
     box-shadow: 2px 2px 13px 1px #0000004d;
+    border: 2px solid;
+    color: #d79f47;
 }
 button#trigger-overlay {
-    background: transparent;
-    border: 2px solid #d79f47 !important;
+  background: transparent;
+  border: 2px solid #d79f47 !important;
     border-radius: 5px;
     /* color: #fff; */
     color: #d79f47 !important;
@@ -267,22 +259,15 @@ button#trigger-overlay {
     cursor: pointer;
 }
 .questionbox p {
-    margin: 7% 5% 5% 5%;
-    /* background-color: rgba(255,255,255,0.8); */
+    margin: 8% 5% 1.5% 5%;
+    background-color: rgba(0,0,0,.7) !important;
     word-wrap: break-word;
-    font-size: 1.2em;
+    font-size: 1.3em;
     border-radius: 10px;
     padding: 1em;
     letter-spacing: 0px;
     box-shadow: 2px 2px 9px 3px #00000080;
     color:#d79f47;
-}
-
-.questionbox p {
-    margin: 8% 5% 1.5% 5%;
-    background-color: rgba(255,255,255,0.2) !important;
-    word-wrap: break-word;
-    font-size: 1.3em;
 }
 
 .questionbox h3 {
@@ -300,6 +285,7 @@ button#trigger-overlay {
     padding: 12px 20px;
     background: none;
     margin-top: 35px;
+    color: #d79f47;
 }
 .questionbox input::placeholder {
   color: #d79f47;
@@ -338,20 +324,6 @@ button#trigger-overlay {
     color: #d79f47;
     border-top: 1px solid #d79f47;
     border-bottom: 1px solid #d79f47;
-}
-.scoreboard {
-    letter-spacing: 0px;
-    width: 29%;
-    float: right;
-    /* background-color: white; */
-    background-color: #260026 !important;
-    height: 95%;
-    margin-bottom: 10px;
-    /* padding: 10px; */
-    overflow: auto;
-    box-shadow: 2px 2px 13px 1px #0000004d;
-    border: 2px solid;
-    color: #d79f47;
 }
 .scoreboard h3 {
     /* background-color: #c5c5c5; */
@@ -452,7 +424,7 @@ button#trigger-overlay {
       <!--//headder-->
       <!-- banner -->
       <div class="top_page-banner">
-         <h2><?php echo $_SESSION['name'];?> | <?php echo $_SESSION['ktj_id'];?></h2>
+         <span><?php echo $_SESSION['name'];?> | <?php echo $_SESSION['ktj_id'];?></span>
       </div>
       <!--//banner -->
          <!--headder-->
@@ -462,7 +434,7 @@ button#trigger-overlay {
                
                $iimmgg = $_SESSION['image'];
                ?>
-                  <div id="img_p" class="questionbox" style=" background-size: cover;background-image: url(<?php echo $iimmgg ?>);">
+                  <div id="img_p" class="questionbox col-12 col-md-8" style=" background-size: cover;background-image: url(<?php echo $iimmgg ?>);">
                      <center>
                      <h3 >Question <span id="question_no"> <?php echo $q_on; ?></span></h3>
                      <p id="question"><?php echo $ques; ?></p>
@@ -485,7 +457,7 @@ button#trigger-overlay {
                      </center>
                   </div>
 
-                  <div class="scoreboard scrollbar" id="style-10">
+                  <div class="scoreboard scrollbar col-12 col-md-4" id="style-10">
                     <center>
                         <h3>Top 10 Relics</h3>
                     </center>   
