@@ -100,7 +100,7 @@ $_SESSION['currentimage'] = 1;
 
         <link rel="stylesheet" href="cssnew/style.css">
         <link rel="stylesheet" href="cssnew/overiden.css">
-        <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png"> -->
+         <link rel="shortcut icon" type="image/png" href="img/favicon.png"> 
         <script type="text/javascript">
             function openForm2()
             {

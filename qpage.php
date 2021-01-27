@@ -10,7 +10,7 @@
   {
     require 'connect.inc.php';
     $q_on=  $_SESSION['q_on'];
-    if($q_on >= 21)
+    if($q_on >= 26)
     {
       $q_on="";
       $ques ="Hurray!! You completed the game";
@@ -463,7 +463,7 @@ button#trigger-overlay {
                   <div id="img_p" class="questionbox col-12 col-md-8" style=" background-size: cover;background-image: url(<?php echo $iimmgg ?>);">
                      <center>
                      <?php
-                      if($_SESSION['q_on'] < 21)
+                      if($_SESSION['q_on'] < 26)
                       {
                     ?>
                      <h3 >Question <span id="question_no"> <?php echo $q_on; ?></span></h3>
@@ -480,15 +480,15 @@ button#trigger-overlay {
                      <p id="question"><?php echo $ques; ?></p>
 
                      <?php
-                      if($_SESSION['q_on'] < 21)
+                      if($_SESSION['q_on'] < 26)
                       {
                     ?>
 
-                     <form action='aCheck.php' autocomplete="off" method="POST">
-                     <input type="text" id="answer" name="answer" placeholder="Put your answer here..."  required><br><br>
-                     <button type="submit" id="qSubmit" class=" center-button" >SUBMIT</button>    <!--     -->
-                     </form>
-                     
+                     <!--<form action='aCheck.php' autocomplete="off" method="POST">-->
+                     <!--<input type="text" id="answer" name="answer" placeholder="Put your answer here..."  required><br><br>-->
+                     <!--<button type="submit" id="qSubmit" class=" center-button" >SUBMIT</button>    <!--     -->-->
+                     <!--</form>-->
+                     <p>We are no longer accepting responses</p>
                      <form action='nextImage.php' autocomplete="off" method="POST">
                      <button type="submit" id="qSubmit" class=" center-button" >NEXT IMAGE</button>
                      </form>
